@@ -1,0 +1,97 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #ff6600;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+#product-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 80%;
+}
+#product-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.product-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-description {
+    margin-left: 40px;
+}
+
+    .product-description h2 {
+        color: #ff6600;
+    }
+
+    .product-description p {
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+#features {
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+    
+    text-align: center;
+}
+
+    #features h2 {
+        color: #ff6600;
+    }
+
+    #features ul {
+        list-style-type: square;
+        padding: 0;
+       
+    }
+
+    #features li {
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 10px;
+        list-style-type: none;
+    }
+#cta {
+    text-align: center;
+    margin: 20px 0;
+}
+
+    #cta button {
+        background-color: #ff6600;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        #cta button:hover {
+            background-color: #e65c00;
+        }
