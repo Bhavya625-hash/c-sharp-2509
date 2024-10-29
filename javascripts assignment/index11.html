@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Simple Quiz</h2>
+        
+        <!-- Question 1 -->
+        <div class="question">
+            1. What is the capital of France?
+        </div>
+        <ul class="options">
+            <li><input type="radio" name="q1" value="Paris"> Paris</li>
+            <li><input type="radio" name="q1" value="London"> London</li>
+            <li><input type="radio" name="q1" value="Berlin"> Berlin</li>
+        </ul>
+    
+        <!-- Question 2 -->
+        <div class="question">
+            2. What is 5 + 3?
+        </div>
+        <ul class="options">
+            <li><input type="radio" name="q2" value="6"> 6</li>
+            <li><input type="radio" name="q2" value="8"> 8</li>
+            <li><input type="radio" name="q2" value="10"> 10</li>
+        </ul>
+    
+        <!-- Question 3 -->
+        <div class="question">
+            3. What is the color of the sky on a clear day?
+        </div>
+        <ul class="options">
+            <li><input type="radio" name="q3" value="Blue"> Blue</li>
+            <li><input type="radio" name="q3" value="Green"> Green</li>
+            <li><input type="radio" name="q3" value="Red"> Red</li>
+        </ul>
+    
+        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    
+        <!-- Result Display -->
+        <div class="result" id="result"></div>
+    </div>
+    
+    <script>
+        function submitQuiz() {
+            // Answer key
+            const answers = {
+                q1: "Paris",
+                q2: "8",
+                q3: "Blue"
+            };
+    
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+            let resultDisplay = "";
+    
+            // Check each answer
+            for (let question in answers) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer) {
+                    if (userAnswer.value === answers[question]) {
+                        score++;
+                        resultDisplay += `<p class="correct">Question ${question.slice(1)}: Correct!</p>`;
+                    } else {
+                        resultDisplay += `<p class="incorrect">Question ${question.slice(1)}: Incorrect! The correct answer is ${answers[question]}.</p>`;
+                    }
+                } else {
+                    resultDisplay += `<p class="incorrect">Question ${question.slice(1)}: No answer selected. The correct answer is ${answers[question]}.</p>`;
+                }
+            }
+    
+            // Display the score and results
+            resultDisplay = `<p>Your score: ${score}/${totalQuestions}</p>` + resultDisplay;
+            document.getElementById("result").innerHTML = resultDisplay;
+        }
+    </script>
+    
+</body>
+</html>

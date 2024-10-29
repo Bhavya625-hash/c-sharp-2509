@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <h1>Change Background Color</h1>
+
+  <label for="colorPicker">Choose a color:</label>
+  <input type="color" id="colorPicker" name="colorPicker">
+
+  <script>
+    const colorPicker = document.getElementById('colorPicker');
+    colorPicker.addEventListener('input', function() {
+      document.body.style.backgroundColor = colorPicker.value;
+    });
+  </script>
+    
+</body>
+</html>
